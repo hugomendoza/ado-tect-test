@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useAppSelector, useGetProducts } from '../../hooks'
 
-import { Card, Loader } from '../../components'
+import { Card } from '../../components'
 import { Layout } from '../../layout/Layout'
 
 import { Grid } from './HomePage.Styles'
