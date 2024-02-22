@@ -1,31 +1,48 @@
 import { Button, Inputs } from '../../components'
+import { useSubmitForm } from '../../hooks'
 import { Form, Main } from './LoginPage.styles'
 
-export const LoginPage = (): JSX.Element => {
+export const LoginPage = () => {
+
+  const {
+    email,
+    password,
+    onHandleInput,
+    onValidateMail,
+    onValidatePassword,
+    onSubmit,
+    emailError,
+    passwordError
+  } = useSubmitForm()
+
   return (
     <Main>
       <div className='container'>
-        <Form>
+        <Form onSubmit={onSubmit}>
           <Inputs
             label='Email'
-            name='correo'
+            name='email'
             type='email'
             placeholder='Ingresa tu correo'
-            value=''
-            error
+            value={email}
+            onChange={onHandleInput}
+            error={emailError}
             errorMessage='Email incorrecto'
+            onBlur={onValidateMail}
           />
           <Inputs
             label='Password'
             name='password'
             type='password'
             placeholder='Ingresa tu contraseña'
-            value=''
-            error
-            errorMessage='Email incorrecto'
+            value={password}
+            onChange={onHandleInput}
+            error={passwordError}
+            onBlur={onValidatePassword}
+            errorMessage='Contraseña incorrecta'
           />
           <Button
-            type='button'
+            type='submit'
             value='Ingresar'
           />
         </Form>

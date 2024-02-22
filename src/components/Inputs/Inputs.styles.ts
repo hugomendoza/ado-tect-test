@@ -5,7 +5,7 @@ export const Fieldset = styled.fieldset`
   flex-direction: column;
   gap: 1rem;
   padding: 0;
-  margin: 0;
+  margin: 0 0 0.85rem;
   border: 0;
 `
 
@@ -30,5 +30,4 @@ export const Input = styled.input`
 export const ErrorMessage = styled.p`
   color: var(--red);
   font-size: 0.85rem;
-  margin: 0 0 0.85rem;
 `

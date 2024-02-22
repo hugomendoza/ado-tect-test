@@ -13,6 +13,7 @@ interface Props {
   value: string
   icon?: JSX.Element
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
+  onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void
   error?: boolean
   errorMessage?: string
 }
@@ -27,7 +28,8 @@ export const Inputs = (props: Props): JSX.Element => {
     onChange,
     error,
     errorMessage,
-    icon
+    icon,
+    onBlur
   } = props
 
   return (
@@ -41,6 +43,8 @@ export const Inputs = (props: Props): JSX.Element => {
         placeholder={placeholder}
         value={value}
         onChange={onChange}
+        name={name}
+        onBlur={onBlur}
       />
       {icon}
       {error === true && <ErrorMessage>{errorMessage}</ErrorMessage>}
