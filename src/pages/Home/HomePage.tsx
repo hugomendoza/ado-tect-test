@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import { Products } from '../../types/types'
 import api from '../../api/api'
+import { Button, Card, Nav } from '../../components'
+import { Grid } from './HomePage.Styles'
 
 export const HomePage = (): JSX.Element => {
 
@@ -20,6 +22,15 @@ export const HomePage = (): JSX.Element => {
   }, [])
 
   return (
-    <div>{JSON.stringify(products)}</div>
+    <>
+      <Nav />
+      <section>
+        <div className="container">
+          <Grid>
+            <Card />
+          </Grid>
+        </div>
+      </section>
+    </>
   )
 }

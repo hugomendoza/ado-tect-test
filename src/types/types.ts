@@ -1,3 +1,9 @@
+export interface PropsState {
+  products: Product[]
+  loading: boolean
+  login: boolean
+}
+
 export interface Products {
   data: Product[]
 }
