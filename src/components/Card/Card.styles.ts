@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const StyledCard = styled.li`
@@ -23,9 +24,13 @@ export const StyledDataCard = styled.div`
   padding: 1.5rem;
 `
 
-export const StyledTitleCard = styled.h2`
-  font-size: 1.25rem;
-  font-weight: 300;
+export const StyledTitleCard = styled(Link)`
+  text-decoration: none;
+  color: var(--black);
+  h2 {
+    font-size: 1rem;
+    font-weight: 300;
+  }
 `
 
 export const StyledDescription = styled.p`

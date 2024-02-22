@@ -4,14 +4,10 @@ export interface PropsState {
   login: boolean
 }
 
-export interface Products {
-  data: Product[]
-}
-
 export interface Product {
-  id?: string
-  name?: string
-  data?: Data
+  id: string
+  name: string
+  data: Data
 }
 
 export interface Data {

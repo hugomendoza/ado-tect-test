@@ -1,36 +1,32 @@
-import { useEffect, useState } from 'react'
-import { Products } from '../../types/types'
-import api from '../../api/api'
-import { Button, Card, Nav } from '../../components'
+import { useEffect } from 'react'
+import { useAppSelector, useGetProducts } from '../../hooks'
+
+import { Card } from '../../components'
+import { Layout } from '../../layout/Layout'
+
 import { Grid } from './HomePage.Styles'
 
-export const HomePage = (): JSX.Element => {
+export const HomePage = () => {
 
-  const [products, setProducts] = useState<Products>()
-
-  const getProductsFromApi = async (): Promise<void> => {
-    try {
-      const { data } = await api.get<Products>('objects')
-      setProducts(data)
-    } catch (error) {
-      console.log(error)
-    }
-  }
+  const { products } = useAppSelector(state => state.ado)
+  
+  const { getProductsFromApi } = useGetProducts();
 
   useEffect(() => {
     getProductsFromApi()
   }, [])
-
+  
   return (
-    <>
-      <Nav />
+    <Layout>
       <section>
         <div className="container">
           <Grid>
-            <Card />
+            {products.map(product => (
+              <Card key={product.id} {...product} />
+            ))}
           </Grid>
         </div>
       </section>
-    </>
+    </Layout>
   )
 }

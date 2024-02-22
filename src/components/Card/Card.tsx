@@ -1,4 +1,3 @@
-import { iMacPhoto } from '../../assets/img'
 import {
   StyledCard,
   StyledDataCard,
@@ -7,19 +6,28 @@ import {
   StyledTitleCard
 } from './Card.styles'
 
-export const Card = () => {
+import { iMacPhoto } from '../../assets/img'
+
+import { Product } from '../../types/types'
+
+export const Card = (props:Product) => {
+  
+  const { id, name, data:{ Price } } = props
 
   return (
     <StyledCard>
       <StyledFigureCard>
-        <img src={iMacPhoto} alt="" />
+        <img
+          src={iMacPhoto}
+          alt={name}
+        />
       </StyledFigureCard>
       <StyledDataCard>
-        <StyledTitleCard>
-          Card title
+        <StyledTitleCard to={`/product/${id}`}>
+          <h2>{name || "-"}</h2>
         </StyledTitleCard>
-        <StyledDescription>
-          $150
+        <StyledDescription> 
+          {`${Price ? `$${Price}` : "-"}`} 
         </StyledDescription>
       </StyledDataCard>
     </StyledCard>
