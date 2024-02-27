@@ -1,4 +1,4 @@
-import { StyledLoader, StyledWrapperLoader } from "./Loader.styles"
+import { StyledLoader, StyledWrapperLoader } from './Loader.styles'
 
 export const Loader = () => {
   return (

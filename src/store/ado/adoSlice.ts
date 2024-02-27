@@ -1,11 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { Product, PropsState } from '../../types/types';
+import { Product, PropsState } from '../../types/types'
 
 const initialState:PropsState = {
-  products:[],
+  products: [],
   loading: false,
   login: false
-};
+}
 
 export const adoSlice = createSlice({
   name: 'ado',
@@ -18,15 +18,15 @@ export const adoSlice = createSlice({
     setLoading: (state, { payload }: {payload: boolean}) => {
       state.loading = payload
     },
-    
+
     setProducts: (state, { payload }: {payload: Product[]}) => {
       state.products = payload
     }
   }
-});
+})
 
 export const {
   setLoading,
   setLogin,
   setProducts
-} = adoSlice.actions;
+} = adoSlice.actions

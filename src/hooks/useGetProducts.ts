@@ -6,22 +6,20 @@ import { useAppDispatch } from './useRedux'
 import { Product } from '../types/types'
 
 export const useGetProducts = () => {
-
-  const dispatch = useAppDispatch();
+  const dispatch = useAppDispatch()
 
   const getProductsFromApi = async () => {
-    
-    dispatch(setLoading(true));
+    dispatch(setLoading(true))
 
     try {
       const { data } = await api.get<Product[]>('objects')
       dispatch(setProducts(data))
     } catch (error) {
-      console.log(error)
+      // eslint-disable-next-line no-console
+      console.error(error)
     } finally {
-      dispatch(setLoading(false));
+      dispatch(setLoading(false))
     }
-    
   }
 
   return {

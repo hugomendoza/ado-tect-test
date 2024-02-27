@@ -3,7 +3,6 @@ import { useSubmitForm } from '../../hooks'
 import { Form, Main } from './LoginPage.styles'
 
 export const LoginPage = () => {
-
   const {
     email,
     password,

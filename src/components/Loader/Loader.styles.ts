@@ -1,7 +1,7 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const StyledWrapperLoader = styled.div.attrs({
-  className: "StyledWrapperLoader"
+  className: 'StyledWrapperLoader'
 })`
   width: 100%;
   display: grid;
@@ -10,7 +10,7 @@ export const StyledWrapperLoader = styled.div.attrs({
 `
 
 export const StyledLoader = styled.div.attrs({
-  className: "StyledLoader"
+  className: 'StyledLoader'
 })`
   width: 50px;
   aspect-ratio: 1;

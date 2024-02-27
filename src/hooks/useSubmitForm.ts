@@ -1,17 +1,16 @@
-import { useState } from "react";
-import { useAppDispatch } from "./useRedux";
-import { setLogin } from "../store";
+import { useState } from 'react'
+import { useAppDispatch } from './useRedux'
+import { setLogin } from '../store'
 
 export const useSubmitForm = () => {
-
-  const dispatch = useAppDispatch();
+  const dispatch = useAppDispatch()
 
   const [formsValues, setFormsValues] = useState({
     email: '',
     password: ''
   })
 
-  const [formErrors, setFormErrors] = useState ({
+  const [formErrors, setFormErrors] = useState({
     emailError: false,
     passwordError: false
   })
@@ -26,7 +25,7 @@ export const useSubmitForm = () => {
   }
 
   const onValidateMail = () => {
-    if(email !== '') {
+    if (email !== '') {
       setFormErrors({
         ...formErrors,
         emailError: false
@@ -35,7 +34,7 @@ export const useSubmitForm = () => {
   }
 
   const onValidatePassword = () => {
-    if(password !== '') {
+    if (password !== '') {
       setFormErrors({
         ...formErrors,
         passwordError: false
@@ -44,33 +43,32 @@ export const useSubmitForm = () => {
   }
 
   const onSubmit = (e:React.ChangeEvent<HTMLFormElement>) => {
-
     e.preventDefault()
 
     let updatedErrors = {...formErrors}
 
-    if(email === '' && password === '') {
+    if (email === '' && password === '') {
       updatedErrors = {
         ...updatedErrors,
         emailError: true,
         passwordError: true
       }
-    } else if(email === '') {
+    } else if (email === '') {
       updatedErrors = {
         ...updatedErrors,
         emailError: true
       }
-    } else if(password === '') {
+    } else if (password === '') {
       updatedErrors = {
         ...updatedErrors,
         passwordError: true
       }
     }
-    
+
     setFormErrors(updatedErrors)
 
     if (!updatedErrors.passwordError && !updatedErrors.emailError) {
-      dispatch(setLogin(true));
+      dispatch(setLogin(true))
     }
   }
 
@@ -80,7 +78,7 @@ export const useSubmitForm = () => {
     onHandleInput,
     onSubmit,
     onValidateMail,
-    onValidatePassword,
+    onValidatePassword
   }
 }
 

@@ -5,8 +5,7 @@ import { StyledNav } from './Nav.styles'
 import { Button } from '../Button/Button'
 
 export const Nav = () => {
-
-  const dispatch =  useAppDispatch()
+  const dispatch = useAppDispatch()
 
   return (
     <StyledNav>

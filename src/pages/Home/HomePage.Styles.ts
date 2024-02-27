@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const Grid = styled.ul`
   margin-top: 1.5rem;

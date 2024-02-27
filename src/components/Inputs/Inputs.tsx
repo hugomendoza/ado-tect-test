@@ -12,7 +12,9 @@ interface Props {
   placeholder: string
   value: string
   icon?: JSX.Element
+  // eslint-disable-next-line no-unused-vars
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
+  // eslint-disable-next-line no-unused-vars
   onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void
   error?: boolean
   errorMessage?: string

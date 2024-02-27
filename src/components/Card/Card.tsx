@@ -11,8 +11,7 @@ import { iMacPhoto } from '../../assets/img'
 import { Product } from '../../types/types'
 
 export const Card = (props:Product) => {
-  
-  const { id, name, data:{ Price } } = props
+  const { id, name, data: { Price } } = props
 
   return (
     <StyledCard>
@@ -24,10 +23,10 @@ export const Card = (props:Product) => {
       </StyledFigureCard>
       <StyledDataCard>
         <StyledTitleCard to={`/product/${id}`}>
-          <h2>{name || "-"}</h2>
+          <h2>{name || '-'}</h2>
         </StyledTitleCard>
-        <StyledDescription> 
-          {`${Price ? `$${Price}` : "-"}`} 
+        <StyledDescription>
+          {`${Price ? `$${Price}` : '-'}`}
         </StyledDescription>
       </StyledDataCard>
     </StyledCard>

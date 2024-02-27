@@ -1,5 +1,5 @@
-import { configureStore } from "@reduxjs/toolkit";
-import { adoSlice } from "./";
+import { configureStore } from '@reduxjs/toolkit'
+import { adoSlice } from './'
 
 export const store = configureStore({
   reducer: {
