@@ -22,7 +22,8 @@ export const ProductPage = () => {
 
   useEffect(() => {
     getProduct(idProduct!)
-  }, [getProduct, idProduct])
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [idProduct])
 
   return (
     <Layout>
