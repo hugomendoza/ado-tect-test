@@ -22,7 +22,7 @@ export const ProductPage = () => {
 
   useEffect(() => {
     getProduct(idProduct!)
-  }, [idProduct])
+  }, [getProduct, idProduct])
 
   return (
     <Layout>
